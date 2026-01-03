@@ -6,8 +6,9 @@ const Footer = () => {
     <footer className="border-t border-gray-200 bg-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
+          {/* First column - Brand */}
+          <div className="space-y-4 text-center md:text-left">
+            <div className="flex items-center justify-center gap-2 md:justify-start">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500">
                 <Brain className="h-5 w-5 text-white" />
               </div>
@@ -20,7 +21,8 @@ const Footer = () => {
             </p>
           </div>
 
-          <div>
+          {/* Second column - Product */}
+          <div className="text-center md:text-left">
             <h3 className="mb-4 text-sm font-semibold text-gray-900">Product</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li><a href="#" className="hover:text-primary-600">Features</a></li>
@@ -30,7 +32,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* Third column - Company */}
+          <div className="text-center md:text-left">
             <h3 className="mb-4 text-sm font-semibold text-gray-900">Company</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li><a href="#" className="hover:text-primary-600">About</a></li>
@@ -40,9 +43,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* Fourth column - Connect */}
+          <div className="text-center md:text-left">
             <h3 className="mb-4 text-sm font-semibold text-gray-900">Connect</h3>
-            <div className="flex gap-4">
+            <div className="flex justify-center gap-4 md:justify-start">
               <a href="#" className="text-gray-600 hover:text-primary-600">
                 <Twitter className="h-5 w-5" />
               </a>

@@ -12,8 +12,8 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500">
-                <Brain className="h-6 w-6 text-white" />
+              <div className="flex h-7 sm:h-7 md:h-8 lg:h-10 w-7 sm:w-7 md:w-8 lg:w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500">
+                <Brain className="lg:h-6 md:h-5 sm:h-4 h-4 lg:w-6 md:w-5 sm:w-4 w-4 text-white" />
               </div>
               <span className="text-xl font-bold text-gray-900">
                 Thought<span className="text-gradient">Flow</span>
@@ -21,7 +21,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {isAuthenticated ? (
               <>
                 <div className="hidden items-center gap-2 sm:flex">
