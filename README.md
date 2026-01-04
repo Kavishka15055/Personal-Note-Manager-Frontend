@@ -1,10 +1,12 @@
 # Personal Note Manager
+<img width="1892" height="815" alt="image" src="https://github.com/user-attachments/assets/8841cf2e-205b-40b7-9855-eaefabe8564b" />
+
 
 A full-stack web application for managing personal notes with user authentication. Users can create, read, update, and delete notes with a clean and intuitive interface.
 
 ## 📋 Table of Contents
 
-- [Project Overview](#project-overview)
+- [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
@@ -12,16 +14,17 @@ A full-stack web application for managing personal notes with user authenticatio
 - [Configuration](#configuration)
 - [Running the Application](#running-the-application)
 - [API Documentation](#api-documentation)
-- [Features](#features)
+- [Self-Evaluation](#self-evaluation)
 - [Project Structure Details](#project-structure-details)
 
-## 🎯 Project Overview
+## 🎯 Features
 
-**Personal Note Manager** is a MERN stack application that allows users to:
-- Create accounts and authenticate securely
-- Create, read, update, and delete personal notes
-- Access notes from anywhere with a persistent backend
-- Enjoy a responsive and modern user interface
+- 🔐 **Secure Authentication** - User signup, login, and JWT-based session management
+- 📝 **Note Management** - Create, read, update, and delete notes
+- 📌 **Pinning Feature** - Pin important notes to the top
+- 🔍 **Search & Filter** - Easily search through your notes
+- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
+- 🎨 **Modern UI** - Built with Tailwind CSS for a polished look
 
 ## 🛠 Tech Stack
 
@@ -111,14 +114,16 @@ Before you begin, ensure you have the following installed:
 
 ## 🚀 Installation
 
+There are two repositories, backend and frontend:
+
+### Backend Setup
+
 ### Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Kavishka15055/Personal-Note-Manager-Backend.git
 cd "Personal Note Manager"
 ```
-
-### Backend Setup
 
 1. Navigate to the backend directory:
 ```bash
@@ -139,6 +144,13 @@ NODE_ENV=development
 ```
 
 ### Frontend Setup
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Kavishka15055/Personal-Note-Manager-Frontend.git
+cd "Personal Note Manager"
+```
 
 1. Navigate to the frontend directory:
 ```bash
@@ -323,15 +335,22 @@ Content-Type: application/json
 DELETE /api/notes/:noteId
 ```
 
-## ✨ Features
+## 📊 Self-Evaluation
 
-- **User Authentication:** Secure signup and login with JWT tokens
-- **Note Management:** Create, read, update, and delete notes
-- **Responsive Design:** Works seamlessly on desktop and mobile devices
-- **Real-time Notifications:** Toast notifications for user feedback
-- **Protected Routes:** Authenticated access to dashboard and notes
-- **Modern UI:** Clean and intuitive interface with Tailwind CSS
-- **Error Handling:** Comprehensive error messages and validation
+**Overall Score: 8.5/10**
+
+### Evaluation Criteria
+
+| Criteria | Score | Comments |
+|----------|-------|----------|
+| **Code Quality & Cleanliness** | 9/10 | • Consistent formatting and naming conventions<br/>• Modular component structure<br/>• Proper error handling throughout<br/>• Well-organized project structure |
+| **Functionality & Features** | 9/10 | • All CRUD operations implemented<br/>• Authentication working flawlessly<br/>• Pinning feature with visual indicators<br/>• Search and filter functionality<br/>• Responsive design on all devices |
+| **UI/UX Design** | 8.5/10 | • Clean, intuitive interface<br/>• Good use of spacing and typography<br/>• Meaningful icon usage<br/>• Smooth transitions and hover effects<br/>⚠️ Could improve: More color variety, loading states |
+| **Backend Architecture** | 8/10 | • RESTful API design<br/>• Proper middleware usage<br/>• Secure authentication with JWT<br/>• Database schema well-defined<br/>⚠️ Could improve: Add rate limiting, request validation |
+| **Performance & Optimization** | 8/10 | • Efficient database queries<br/>• Proper state management<br/>• Lazy loading where applicable<br/>⚠️ Could improve: Add pagination for large datasets |
+| **Error Handling & Reliability** | 9/10 | • Comprehensive error messages<br/>• Proper HTTP status codes<br/>• Token expiration handling<br/>• Network error recovery |
+| **Deployment & DevOps** | 8/10 | • Successfully deployed full-stack<br/>• Environment variables properly configured<br/>• CORS correctly set up<br/>⚠️ Could improve: Add CI/CD pipeline, monitoring |
+| **Documentation** | 8/10 | • Clear README with setup instructions<br/>• Code comments where necessary<br/>⚠️ Could improve: Add API documentation, troubleshooting guide |
 
 ## 🔒 Security Features
 
