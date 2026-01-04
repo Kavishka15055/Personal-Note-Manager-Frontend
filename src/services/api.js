@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+// Get API URL from environment variables or use default
+const API_URL = import.meta.env.VITE_API_URL || 'https://personal-note-manager-backend-1-mf7b.onrender.com'
 
 console.log('API URL:', API_URL) // Debug log
 
@@ -9,17 +10,16 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 10000, // 10 second timeout
 })
 
 // Request interceptor to add auth token
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token')
-    console.log('Request token:', token) // Debug log
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
     }
-    console.log('Request config:', config) // Debug log
     return config
   },
   (error) => {
@@ -30,14 +30,11 @@ api.interceptors.request.use(
 
 // Response interceptor for error handling
 api.interceptors.response.use(
-  (response) => {
-    console.log('Response:', response) // Debug log
-    return response
-  },
+  (response) => response,
   (error) => {
-    console.error('Response error:', error.response) // Debug log
     if (error.response?.status === 401) {
       localStorage.removeItem('token')
+      localStorage.removeItem('user')
       window.location.href = '/login'
     }
     return Promise.reject(error)
@@ -45,18 +42,9 @@ api.interceptors.response.use(
 )
 
 export const authAPI = {
-  login: (data) => {
-    console.log('Login request:', data) // Debug log
-    return api.post('/auth/login', data)
-  },
-  register: (data) => {
-    console.log('Register request:', data) // Debug log
-    return api.post('/auth/register', data)
-  },
-  getProfile: () => {
-    console.log('Get profile request') // Debug log
-    return api.get('/auth/profile')
-  },
+  login: (data) => api.post('/auth/login', data),
+  register: (data) => api.post('/auth/register', data),
+  getProfile: () => api.get('/auth/profile'),
 }
 
 export const notesAPI = {
