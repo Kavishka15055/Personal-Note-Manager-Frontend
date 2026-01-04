@@ -1,16 +1,15 @@
 import axios from 'axios'
 
-// Get API URL from environment variables or use default
-const API_URL = import.meta.env.VITE_API_URL || 'https://personal-note-manager-backend-1-mf7b.onrender.com'
+// IMPORTANT: Add /api to the end of your backend URL
+const API_URL = 'https://personal-note-manager-backend-1-mf7b.onrender.com/api'
 
-console.log('API URL:', API_URL) // Debug log
+console.log('API URL:', API_URL)
 
 const api = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000, // 10 second timeout
 })
 
 // Request interceptor to add auth token
@@ -23,7 +22,6 @@ api.interceptors.request.use(
     return config
   },
   (error) => {
-    console.error('Request interceptor error:', error)
     return Promise.reject(error)
   }
 )
